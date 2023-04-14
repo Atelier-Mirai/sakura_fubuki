@@ -4,8 +4,13 @@
 
 /* codeクラス(ソースコードへのリンク) についての指定 */
 .code {
-  grid-row: code;     /* code 行の下に配置します */
-  text-align: center; /* 文字揃えは中央にします */
+  grid-row: code;            /* code 行の下に配置します */
+  grid-column: 2;            /* 左から二本目の線に配置します */
+  text-align: center;        /* 文字揃えは中央にします */
+  writing-mode: vertical-rl; /* 縦書きにします */
+  justify-self: center;      /* 水平方向に中央揃えします */
+  align-self: end;           /* 垂直方向に下揃えします */
+  margin-bottom: 50px;       /* 少し下側に間隔を設けます */
 }
 
 /*---------------------------------------------------------------------

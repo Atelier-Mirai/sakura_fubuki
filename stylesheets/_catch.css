@@ -5,16 +5,20 @@
 /* catchクラス(キャッチフレーズ)に対する指定 */
 .catch {
   grid-row: catch;        /* catch 行の下に配置します */
+  grid-column: 3;         /* 左から三本目の線に配置します */
   justify-self: center;   /* 水平方向に中央揃えします */
   align-self: center;     /* 垂直方向に中央揃えします */
 
   color: var(--sakurairo);/* 文字の色は桜色にします */
-  font-size: 42px;        /* 文字の大きさを指定します */
+  font-size: 36px;        /* 文字の大きさを指定します */
   font-weight: normal;    /* 文字の太さは、普通にします */
   line-height: 1.2;       /* 行の高さを文字サイズの1.2倍にします */
   /* 文字の右下に黒い影を、左上に灰色の影を付けます */
   text-shadow: 2px 2px 5px var(--kurohairo),
               -2px -2px 5px var(--nibiiro);
+
+  /* 俳句なので 縦書きにします */
+  writing-mode: vertical-rl;
 }
 
 /* catchクラス内の a要素に対する指定 */
@@ -36,10 +40,18 @@
 ---------------------------------------------------------------------*/
 @media (width >= 768px) {
   /* 横幅が768px以上の時には、
-     中央は６列設けたので、
+     中央に６列設けたので、
      左の4列に .catch要素を配置します */
   .catch {
     /* 左から二本目の線から、四列分使って配置します */
     grid-column: 2 / span 4;
+    /* 標準の横書きに戻します */
+    writing-mode: unset;
+
+    /* 俳句の文字の大きさを 画面幅に応じて 滑らかに変化させます */
+    /* 画面幅  768px の時に 36px */
+    /* 画面幅 1280px の時に 48px */
+    /* https://chrisburnell.com/clamp-calculator/ */
+    font-size: clamp(2.25rem, 1.125rem + 2.344vw, 3rem)
   }
 }

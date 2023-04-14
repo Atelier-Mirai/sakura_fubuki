@@ -34,7 +34,7 @@
 
 /* 見出しの上下に金色の線を引くための装飾いろいろ */
 /* 参考: https://jajaaan.co.jp/css/css-headline/ */
-.haiku h2 { position: relative; padding: 1.25rem 2rem; }
+.haiku h2 { position: relative; padding: 1.25rem 2rem; margin: 1rem 0 1rem; }
 .haiku h2::before, .haiku h2::after {
   position: absolute;  left: 0;  width: 100%;  height: 4px;  content: "";
   background: linear-gradient(
