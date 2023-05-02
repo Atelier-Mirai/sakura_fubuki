@@ -4,11 +4,21 @@
 
 /* haikuクラスに対する指定 */
 .haiku {
-  grid-row: haiku;  /* haiku 行の下に配置します */
-  display: grid;    /* grid 枠線 を使って配置するモードにします */
+  grid-row: haiku;                /* haiku 行の下に配置します */
+  display: grid;                  /* 枠線(grid)を使い 配置できるようにします */
   grid-template-columns: 1fr 1fr; /* 二列、創ります */
-  row-gap: 20px;    /* 行間を20px 列間を10px 取ります */
+  row-gap: 20px;                  /* 行間を20px 列間を10px 取ります */
   column-gap: 10px;
+}
+
+/* haikuクラス内のh3要素(俳句)に対する指定 */
+.haiku h3 {
+  font-size: 17px;         /* 文字の大きさを指定します */
+}
+
+/* haikuクラス内のp要素(俳人名)に対する指定 */
+.haiku p {
+  text-align: right;       /* 文字を右揃えにします */
 }
 
 /* haiku クラス内の a 要素に対する指定 */
@@ -27,7 +37,7 @@
 .haiku h2 {
   grid-column: 1 / -1;     /* (見出しなので)二列ぶち抜きで配置します */
   font-size: 24px;         /* 文字の大きさを指定します */
-  font-weight: normal;     /* 文字の太さは、普通にします */
+  font-weight: normal;     /* 文字の太さは普通にします */
   text-align: center;      /* 文字揃えは中央にします */
   color: var(--kurohairo); /* 文字の色は黒羽色にします */
 }
@@ -40,25 +50,13 @@
   background: linear-gradient(
               135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%); }
 .haiku h2:before { top: 0; }
-.haiku h2:after {  bottom: 0; }
+.haiku h2:after  { bottom: 0; }
 
-/* haikuクラス内のh3要素(俳句)に対する指定 */
-.haiku h3 {
-  font-size: 17px;         /* 文字の大きさを指定します */
-}
-
-/* haikuクラス内のp要素(俳人名)に対する指定 */
-.haiku p {
-  text-align: right;       /* 文字を右揃えにします */
-}
-
-/*---------------------------------------------------------------------
-  画面の横幅が768px以上の時の追加指定
+/* 画面の横幅が768px以上の時の追加指定
 ---------------------------------------------------------------------*/
 @media (width >= 768px) {
   .haiku {
-    /* 3列 x 2行 で配置するようにします */
+    /* 3列 で配置するようにします */
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
   }
 }

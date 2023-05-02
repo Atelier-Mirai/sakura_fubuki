@@ -15,10 +15,10 @@ body {
               /* 各行を指定しやすいよう 行に名前を付けます */
               /* catch code と 同じ行に別名を付けることもできます */
               /* また それぞれの行の高さも指定しています */
-              [header]      100px
-              [catch code]  calc(100vh - 100px - 20px)
-              [haiku]       auto
-              [footer]      100px;
+              [header]     100px
+              [catch code] calc(100vh - 100px - 20px)
+              [haiku]      auto
+              [footer]     100px;
 
   /* 各行の間隔を取ります */
   row-gap: 20px;

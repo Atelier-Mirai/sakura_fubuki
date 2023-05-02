@@ -40,16 +40,15 @@
   background: var(--nanohanairo);     /* 背景色は菜の花色 */
 }
 
-
-/* グラデーションボタン
+/* 虹色のボタン
 ---------------------------------------------------------------------*/
-.gradient.button {
+.rainbow.button {
   /* 背景色を桜色のグラデーションにする */
   background-image: linear-gradient(20deg, #e9defa 0%, #f7cbea 100%);
 
   /* ボタンに枠線をつける */
   border: 4px solid #e60012;
-  /* 枠線をグラデーションにする */
+  /* 枠線を虹色にする */
   border-image: linear-gradient(to right,
     #e60012 14%,
     #f39800 28%,
@@ -61,14 +60,9 @@
   border-image-slice: 1;
 }
 
-/* マウスを重ねたときの指定 */
-.gradient.button:hover {
-  box-shadow: 0 5px 15px #bc33f5; /* ボタンに紫色の影を付ける */
-}
-
-/* 文字の色の指定 */
-.gradient.button span {
-  background: linear-gradient(   /* 虹色にする */
+/* 文字を虹色にする */
+.rainbow.button span {
+  background: linear-gradient(
     -225deg,
     #e60012 14%,
     #f39800 28%,
@@ -79,6 +73,11 @@
     #cfa7cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* マウスを重ねたときの指定 */
+.rainbow.button:hover {
+  box-shadow: 0 5px 15px #bc33f5; /* ボタンに紫色の影を付ける */
 }
 
 /* 金塊のようなボタン

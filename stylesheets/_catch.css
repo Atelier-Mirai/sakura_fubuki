@@ -32,7 +32,10 @@
 /* catchクラス内の a要素にマウスを重ねたときの指定 */
 .catch a:hover {
   /* 文字の装飾として、下線を付けます */
+  -webkit-text-decoration-line: underline;
   text-decoration: underline;
+  /* 文字に天色のぼかしをつけます */
+  text-shadow: 0 5px 15px var(--amairo);
 }
 
 /*---------------------------------------------------------------------
