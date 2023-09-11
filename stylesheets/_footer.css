@@ -8,9 +8,9 @@ footer {
   grid-column: 1 / -1;          /* 左右の余白も使って配置します */
   background: var(--sakurairo); /* 背景を桜色にします */
   padding: 14px 0;              /* 空白を入れ上下中央揃えにします */
-}
 
-/* footer 要素内の p 要素に対する指定 */
-footer p {
-  text-align: center;           /* 文字を中央揃えにします */
+  /* footer 要素内の p 要素に対する指定 */
+  & p {
+    text-align: center;           /* 文字を中央揃えにします */
+  }
 }

@@ -19,34 +19,28 @@
 
   /* 俳句なので 縦書きにします */
   writing-mode: vertical-rl;
-}
 
-/* catchクラス内の a要素に対する指定 */
-.catch a {
-  color: inherit;        /* 文字の色は、.catch の色を継承します */
-  text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
-  font-size: 32px;       /* 文字の大きさを指定します */
-  margin-top: 1em;       /* 少し上に間隔を取ります */
-}
+  /* catchクラス内の a要素に対する指定 */
+  & a {
+    color: inherit;        /* 文字の色は、.catch の色を継承します */
+    text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
+    font-size: 32px;       /* 文字の大きさを指定します */
+    margin-top: 1em;       /* 少し上に間隔を取ります */
+  }
 
-/* catchクラス内の a要素にマウスを重ねたときの指定 */
-.catch a:hover {
-  /* 文字の装飾として、下線を付けます */
-  -webkit-text-decoration-line: underline;
-  text-decoration: underline;
-  /* 文字に天色のぼかしをつけます */
-  text-shadow: 0 5px 15px var(--amairo);
-}
+  /* catchクラス内の a要素にマウスを重ねたときの指定 */
+  & a:hover {
+    /* 文字の装飾として、下線を付けます */
+    -webkit-text-decoration-line: underline;
+    text-decoration: underline;
+    /* 文字に天色のぼかしをつけます */
+    text-shadow: 0 5px 15px var(--amairo);
+  }
 
-/*---------------------------------------------------------------------
-  画面の横幅が768px以上の時の追加指定
----------------------------------------------------------------------*/
-@media (width >= 768px) {
-  /* 横幅が768px以上の時には、
-     中央に６列設けたので、
-     左の4列に .catch要素を配置します */
-  .catch {
-    /* 左から二本目の線から、四列分使って配置します */
+  /* 画面の横幅が768px以上の時の追加指定 */
+  @media (width >= 768px) {
+    /* 横幅が768px以上の時には、中央は６列設けました。
+       .catch は 左から二本目の線から、四列分使って配置します */
     grid-column: 2 / span 4;
     /* 標準の横書きに戻します */
     writing-mode: unset;

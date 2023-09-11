@@ -17,23 +17,23 @@ body {
   border-radius: 15px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
-}
 
-/* さくらの花びらの楕円形 */
-/* 15度回転させることで、花びら形にする */
-.hana::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top:  -7px;
-  left: -7px;
-  width:  0;
-  height: 0;
-  border: 10px solid transparent;
-  border-radius: 15px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transform: rotate(15deg);
+  /* さくらの花びらの楕円形 */
+  /* 15度回転させることで、花びら形にする */
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top:  -7px;
+    left: -7px;
+    width:  0;
+    height: 0;
+    border: 10px solid transparent;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: rotate(15deg);
+  }
 }
 
 /* 淡い櫻色から濃い櫻色まで 五色のテーマ */

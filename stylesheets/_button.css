@@ -10,9 +10,11 @@
   /* 横幅と高さを指定して表示できるようにする */
   display: inline-block;
 
-  /* 書体に関する指定 */
-  /* 大きさを 16px 〜 24pxまで可変にする */
-  font-size: clamp(16px, 4vw, 24px);
+  /* ボタンの文字の大きさを 画面幅に応じて 滑らかに変化させます */
+  /* 画面幅  375px の時に 16px */
+  /* 画面幅 768px の時に 24px */
+  /* https://chrisburnell.com/clamp-calculator/ */
+  font-size: clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
   text-decoration: none; /* 下線などの装飾が付かないようにする */
 
   /* 文字の配置に関する指定 */
@@ -34,10 +36,12 @@
   color: var(--botaniro);             /* 文字の色は牡丹色 */
   border: double 3px var(--botaniro); /* 二重の牡丹色の枠線 */
   background: var(--sakurairo);       /* 背景色は桜色 */
-}
 
-.simple.button:hover {                /* マウスを重ねたときの指定 */
-  background: var(--nanohanairo);     /* 背景色は菜の花色 */
+
+  /* マウスを重ねたときの指定 */
+  &:hover {
+    background: var(--nanohanairo);     /* 背景色は菜の花色 */
+  }
 }
 
 /* 虹色のボタン
@@ -58,26 +62,26 @@
     #1d2088 84%,
     #cfa7cd 100%);
   border-image-slice: 1;
-}
 
-/* 文字を虹色にする */
-.rainbow.button span {
-  background: linear-gradient(
-    -225deg,
-    #e60012 14%,
-    #f39800 28%,
-    #fff100 42%,
-    #009944 56%,
-    #0068B7 70%,
-    #1d2088 84%,
-    #cfa7cd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  /* 文字を虹色にする */
+  & span {
+    background: linear-gradient(
+      -225deg,
+      #e60012 14%,
+      #f39800 28%,
+      #fff100 42%,
+      #009944 56%,
+      #0068B7 70%,
+      #1d2088 84%,
+      #cfa7cd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-/* マウスを重ねたときの指定 */
-.rainbow.button:hover {
-  box-shadow: 0 5px 15px #bc33f5; /* ボタンに紫色の影を付ける */
+  /* マウスを重ねたときの指定 */
+  &:hover {
+    box-shadow: 0 5px 15px #bc33f5; /* ボタンに紫色の影を付ける */
+  }
 }
 
 /* 金塊のようなボタン
@@ -100,12 +104,12 @@
     #ffffdb 50%,
     #fff5a0 70%,
     #fdd456 100%);
-}
 
-/* マウスを重ねたときの指定 */
-.gold.button:hover {
-  /* 上に 3px 空白を入れて、下の枠線を 3px 減らすことで、
-     押してへこんだように見せる */
-  margin-top: 3px;
-  border-bottom: 7px solid #987c1e;
+  /* マウスを重ねたときの指定 */
+  &:hover {
+    /* 上に 3px 空白を入れて、下の枠線を 3px 減らすことで、
+       押してへこんだように見せる */
+    margin-top: 3px;
+    border-bottom: 7px solid #987c1e;
+  }
 }

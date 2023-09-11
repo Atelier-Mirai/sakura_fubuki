@@ -8,6 +8,12 @@ header  {
   justify-self: center; /* 水平方向に中央揃えします */
   align-self: center;   /* 垂直方向に中央揃えします */
 
+  /* 画面の横幅が768px以上の時の追加指定 */
+  @media (width >= 768px) {
+    /* 水平方向に始まりから(左寄せで)配置します */
+    justify-self: start;
+  }
+
   background-color: var(--utsushiiro); /* 背景色は移色 */
   color: var(--sakurairo);  /* 文字の色は桜色 */
   font-size: 48px;          /* 文字の大きさの指定 */
@@ -32,20 +38,10 @@ header  {
   /* 背景を前景のテキストの中に (切り取って) 表示します */
   -webkit-background-clip: text;
   background-clip: text;
-}
 
-/* header 要素内の a 要素に対する指定を行う */
-header a {
-  color: inherit;        /* 文字の色は、h1 の色を継承します */
-  text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
-}
-
-/*---------------------------------------------------------------------
-  画面の横幅が768px以上の時の追加指定
----------------------------------------------------------------------*/
-@media (width >= 768px) {
-  header {
-    /* 水平方向に始まりから(左寄せで)配置します */
-    justify-self: start;
+  /* header 要素内の a 要素に対する指定を行う */
+  & a {
+    color: inherit;        /* 文字の色は、h1 の色を継承します */
+    text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
   }
 }
